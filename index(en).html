@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVITATION: ORIGINS — Official Website</title>
+    <style>
+        /* --- CONFIGURATION AND CUSTOM THEME (Electric / Cosmic Blue) --- */
+        :root {
+            --primary-color: #00b4d8;    /* Bright electric blue (Energy of imagination) */
+            --bg-dark: #0b132b;          /* Very dark blue / Deep space */
+            --bg-light: #1c2541;         /* Night blue for secondary sections */
+            --text-dark: #2b2d42;        /* Text color on white background */
+            --text-light: #f8f9fa;       /* Text color on dark background */
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- GENERAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--bg-dark);
+            position: relative;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background: linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(0, 180, 216, 0.6);
+        }
+
+        .hero p.subtitle {
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-bottom: 35px;
+            color: var(--primary-color);
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #0b132b;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0096c7;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+        }
+
+        /* --- SECTION: SYNOPSIS --- */
+        .synopsis-section {
+            background-color: #f4f7f6;
+        }
+
+        .synopsis-text {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            text-align: justify;
+        }
+
+        .pitch-box {
+            background-color: white;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .download-container {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        /* --- SECTION: CHARACTERS --- */
+        .grid-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e1e8ed;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 180, 216, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 480px;
+            background-color: #ddd;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-role {
+            display: inline-block;
+            background-color: var(--bg-dark);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid var(--primary-color);
+        }
+
+        /* --- SECTION: UNIVERSE & SPECS --- */
+        .universe-section {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .universe-section h2 {
+            color: var(--text-light);
+        }
+
+        .universe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--primary-color);
+            transition: background-color 0.2s;
+        }
+
+        .info-box:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .info-box h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- FOOTER & CALL TO ARTISTS --- */
+        footer {
+            background-color: #050a14;
+            color: #8d99ae;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .artist-call {
+            background-color: rgba(0, 180, 216, 0.1);
+            border: 1px dashed var(--primary-color);
+            color: #ffffff;
+            padding: 25px 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .artist-call p {
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .github-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+
+        .github-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* --- MOBILE DEVICES --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.6rem; }
+            .hero p.subtitle { font-size: 1.2rem; }
+            .grid-characters { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO BANNER -->
+    <header class="hero">
+        <h1>LEVITATION: ORIGINS</h1>
+        <p class="subtitle">Imagination is a force</p>
+        <a href="#story" class="btn">Discover the Universe</a>
+    </header>
+
+    <!-- SECTION: STORY (SYNOPSIS) -->
+    <section id="story" class="synopsis-section">
+        <div class="container">
+            <h2>The Story</h2>
+            <div class="synopsis-text">
+                <div class="pitch-box">
+                    <p><strong>The Day the Sky Fell:</strong> While the Avengers repel a violent alien armada above New York City, Aiden Cross, an ordinary and dreamy teenager, discovers a mysterious cosmic necklace glowing with a magnetic blue light at the bottom of a crater.</p>
+                </div>
+                <p>As soon as he touches it, the artifact merges with his mind, granting him the power to materialize energy and manipulate gravity through the sheer force of his thoughts. Secretly supported by his family, Aiden learns to master his gifts under the name <strong>Levitation</strong>.</p>
+                <p>But the truce is short-lived: the object's creator, a ruthless alien scientist known as <strong>The Architect</strong>, lands on Earth determined to reshape New York's matter to reclaim his creation. Trapped in a destructive first battle, the young hero will have to rely on instinct and creativity to stand up against this geometric threat before Earth's mightiest heroes arrive.</p>
+                
+                <!-- FULL STORY DOWNLOAD BUTTON -->
+                <div class="download-container">
+                    <button id="download-btn" class="btn">Download Aiden Cross's Story (summary)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION: CHARACTERS -->
+    <section id="characters">
+        <div class="container">
+            <h2>Characters</h2>
+            <div class="grid-characters">
+                
+                <!-- Character 1: Levitation -->
+                <div class="card">
+                    <img src="LÉVITATION(en).png" alt="Levitation - Aiden Cross" class="card-img" style="cursor: pointer;" onclick="openModal(this.src, this.alt)">
+                    <div class="card-content">
+                        <span class="card-role">Protagonist / Superhero</span>
+                        <h3>Aiden Cross (Levitation)</h3>
+                        <p>An ordinary, funny, and witty teenager whose life flips upside down when he finds the <em>Core of Imagination</em> in the form of a necklace. Guided by instinct, he fights with boundless creativity.</p>
+                        <p><strong>Powers:</strong> Free flight, levitation and movement of massive objects, materialization and projection of pure blue geometric energy shapes.</p>
+                    </div>
+                </div>
+
+                <!-- Character 2: The Architect -->
+                <div class="card">
+                    <img src="L'ARCHITECTE(en).png" alt="The Architect" class="card-img" style="cursor: pointer;" onclick="openModal(this.src, this.alt)">
+                    <div class="card-content">
+                        <span class="card-role">Antagonist / Creator</span>
+                        <h3>The Architect</h3>
+                        <p>An alien scientist and logician with dark skin laced with glowing circuitry. Calm and cold, he does not seek to conquer Earth, but only to regain control of his technological creation.</p>
+                        <p><strong>Powers:</strong> Absolute strategic intelligence, high-precision telekinesis, alteration and transformation of the structure of matter, creation of solid energy cages and structures.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SYSTEM SPECS & UNIVERSE -->
+    <section id="universe" class="universe-section">
+        <div class="container">
+            <h2>Specifications & Universe</h2>
+            <div class="universe-grid">
+                <div class="info-box">
+                    <h3>Genre</h3>
+                    <p>Superhero / Action / Cosmic Science Fiction</p>
+                </div>
+                <div class="info-box">
+                    <h3>Target Format</h3>
+                    <p>Comic Book / Graphic Novel format, Hardcover</p>
+                </div>
+                <div class="info-box">
+                    <h3>Target Audience</h3>
+                    <p>Teens / Adults (Ages 12 and up) - MCU & action fans</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & COMMUNITY CALL -->
+    <footer>
+        <div class="container" style="padding: 0;">
+            <div class="artist-call">
+                <p>🎨 If there are any Comic Book artists who want to participate in the project, leave a comment on GitHub!</p>
+                <a href="https://github.com/LordBones-code/Levitation-BD-Looking-For-Artists" target="_blank" class="github-link">Click here !</a>
+            </div>
+            <p>&copy; 2026 - LEVITATION: ORIGINS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- IMAGE MODAL FOR LIGHTBOX EFFECT -->
+    <div id="imageModal" style="display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(11, 19, 43, 0.95); justify-content: center; align-items: center; flex-direction: column;">
+        <span style="position: absolute; top: 15px; right: 35px; color: #f8f9fa; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.2s;" onclick="closeModal()">&times;</span>
+        <img id="modalImg" style="margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 180, 216, 0.5); border: 2px solid #00b4d8;">
+        <div id="modalCaption" style="margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #00b4d8; font-weight: bold; padding: 10px 0; font-size: 1.2rem;"></div>
+    </div>
+    <!-- JAVASCRIPT SCRIPTS AND END OF DOCUMENT -->
+    <script>
+        // --- FUNCTIONS FOR THE IMAGE LIGHTBOX MODAL ---
+        function openModal(src, alt) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const captionText = document.getElementById("modalCaption");
+            
+            modal.style.display = "flex";
+            modalImg.src = src;
+            captionText.innerHTML = alt;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Close when clicking outside the enlarged image
+        document.getElementById("imageModal").addEventListener("click", function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // --- FULL STORY TEXT DOWNLOAD MANAGEMENT ---
+        document.getElementById('download-btn').addEventListener('click', function() {
+            const histoireComplete = `🟦 LEVITATION: ORIGINS — THE STORY OF AIDEN CROSS\n\n` +
+                `🌌 PROLOGUE: THE DAY THE SKY FELL\n` +
+                `New York is used to miracles and catastrophes, but that day, the city shook like never before. In the sky, the Avengers fought a fierce battle against an alien armada that appeared out of nowhere. Explosions lit up the clouds, and meteorite debris crashed into the bay and deserted streets.\n\n` +
+                `Aiden Cross, an ordinary, funny, and somewhat dreamy teenager, took shelter with his family. Once the calm returned and the aliens were repelled by Earth's heroes, Aiden went out to explore the surroundings. It was at the bottom of a smoking crater that he spotted a magnetic blue glow. In the center of a space rock fragment lay a strange artifact: an alien necklace adorned with complex geometric patterns.\n\n` +
+                `As soon as Aiden touched it, a wave of energy surged through his body. The necklace activated, almost merging with his mind. At that exact moment, Aiden Cross ceased to be a simple teenager. He became Levitation.\n\n` +
+                `👨‍👩‍👦 CHAPTER 1: THE FAMILY SECRET\n` +
+                `Unlike most superheroes who hide a double life and inner torments, Aiden couldn't conceal anything from his loved ones. And for good reason: that very evening, he floated involuntarily two meters above his bed, unable to come down, right before the wide eyes of his parents.\n\n` +
+                `Once the shock wore off, his family became his primary anchor. Terrified of anything happening to him, yet aware of Aiden's exceptional gift, his parents agreed to keep the secret. Aiden began training in hiding. He discovered that the necklace reacted to his imagination: if he visualized an object, he could make it fly. If he concentrated his mind, he could materialize shapes of pure blue energy in the palm of his hand. Aiden was naturally kind and playful, but he quickly understood that this power came with great responsibility.\n\n` +
+                `For in the shadows of space, the true creator of this object had located the necklace's signal...\n\n` +
+                `🦹 CHAPTER 2: THE ARRIVAL OF THE ARCHITECT\n` +
+                `One night, the New York sky turned a terrifying electric blue. Giant geometric shapes — lines, circles, triangles of light — drew themselves above the skyscrapers. Then, a massive being slowly descended through the clouds. His silhouette was slender, his dark skin laced with glowing circuitry, and his eyes shone with a cold glare. He wore asymmetrical black and dark blue armor, struck in its center by a complex diamond shape.\n\n` +
+                `It was The Architect. An alien scientist, the designer of the Core of Imagination that powered Aiden's necklace.\n\n` +
+                `His voice echoed throughout the city, calm, devoid of hatred, but terribly threatening:\n` +
+                `"I have not come to conquer your world. I have come to reclaim what belongs to me. This power should not belong to the one who found it. It should belong to the one who knows how to use it."\n\n` +
+                `⚔️ CHAPTER 3: THE FIRST BATTLE\n` +
+                `The Architect began dismantling New York's matter to locate the artifact, turning cars into sharp metal structures and erecting energy walls to block the city. Aiden knew he wasn't ready, but his heroic heart left him no choice. Donning his makeshift costume, he leaped forward to face the monster.\n\n` +
+                `The clash of styles was absolute. The Architect fought with logic, calculations, and geometric precision. Aiden, on the other hand, fought on instinct, with humor and boundless creativity. Faced with the Architect's energy cages, Aiden levitated massive debris to protect himself, learned to fly at high speed to dodge attacks, and projected blasts of blue energy.\n\n` +
+                `But the Architect's power was overwhelming. As a exhausted Aiden was about to receive a fatal blow under the weight of a concrete block transformed by his enemy, a vibranium shield came smashing through the structure.\n\n` +
+                `🛡️ EPILOGUE: THE ALLIANCE OF HEROES\n` +
+                `With a familiar roar, the Avengers' Quinjet stabilized above the alley. Iron Man, Captain America, and the world's other heroes landed on the battlefield. They paused for a moment, stunned to discover this young teenager capable of manipulating gravity and standing alone against a cosmic threat.\n\n` +
+                `The Architect, analyzing the situation and seeing the Avengers joining Levitation, understood that tonight's battle would be too long. In a geometric flash, he dematerialized, leaving behind a promise of vengeance.\n\n` +
+                `Aiden, out of breath, straightened his jacket and watched Earth's mightiest heroes step toward him. His nervous joke made Thor smile. Aiden Cross had just taken his first steps into the big leagues. Levitation's adventure was just beginning...`;
+
+            const blob = new Blob([histoireComplete], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'aiden-cross-levitation-story.txt';
+            document.body.appendChild(a);
+            a.click();
+            
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+
+</body>
+</html>
